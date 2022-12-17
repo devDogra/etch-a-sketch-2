@@ -1,11 +1,23 @@
 * {
-  border: solid;
+  /* border: solid; */
+  font-family: monospace;
 }
 :root {
-  --grid-size: 32;
+  --grid-size: 3;
   --grid-height: 600px;
 }
+body {
+  background-color: wheat;
+}
+h1 {
+  font-size: 5rem;
 
+  text-align: center;
+}
+.grid-container-wrapper {
+  display: flex;
+  justify-content: center;
+}
 .grid-container {
   width: var(--grid-height);
   height: var(--grid-height);
@@ -14,7 +26,29 @@
   grid-template-rows: repeat(var(--grid-size), 1fr);
 
   border: solid;
+  /* margin: auto; */
 }
 .grid-cell {
+  transition: all 0.5s ease;
   border: 1px solid lightgrey;
+}
+.grid-cell.painted {
+  background-color: black;
+}
+.controls {
+  text-align: center;
+  padding: 2rem 2rem 2rem;
+  background-color: black;
+}
+.resize-btn {
+  font-size: 2rem;
+  padding: 0.5rem;
+  background-color: black;
+  color: wheat;
+}
+.resize-btn:hover {
+  background-color: wheat;
+  color: black;
+  transition: all 0.2s ease-in-out;
+  cursor: pointer;
 }
